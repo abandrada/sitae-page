@@ -172,14 +172,14 @@ export default function TimbreDarkDashboard() {
                 <Icon icon="mdi:bell-ring" className="text-emerald-500 text-2xl" /> SITAE <span className="text-emerald-500">XIDMET</span>
               </h1>
               <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800">
-                {alarmas.length} / 30 Slots
+                {alarmas.length} / 30 Alarmas
               </div>
             </div>
 
             {/* Formulario Rápido con Iconos */}
             <div className="p-5 bg-slate-950/30 border-b border-slate-800/60">
               <p className="text-[11px] uppercase text-slate-400 font-bold tracking-wider mb-3 flex items-center gap-1.5">
-                <Icon icon="mdi:plus-circle-outline" className="text-emerald-400 text-sm" /> Nueva Alerta Inteligente
+                <Icon icon="mdi:plus-circle-outline" className="text-emerald-400 text-sm" /> Seleccionar Horario y tipo.
               </p>
               
               <form onSubmit={handleCrearAlarmaEspecial} className="space-y-3">
@@ -212,7 +212,7 @@ export default function TimbreDarkDashboard() {
                   type="submit"
                   className="w-full p-2.5 rounded-lg font-black uppercase text-[10px] bg-slate-800 border border-slate-700 text-emerald-400 tracking-wider flex items-center justify-center gap-1.5 hover:bg-slate-700 transition"
                 >
-                  <Icon icon="mdi:file-upload-outline" className="text-sm" /> Añadir e Inyectar Memoria
+                  <Icon icon="mdi:file-upload-outline" className="text-sm" /> Añadir nuevas alarmas.
                 </button>
               </form>
             </div>
@@ -290,7 +290,7 @@ export default function TimbreDarkDashboard() {
               onClick={() => handleEmergency("emergencyOff")}
               className="flex-1 p-3 rounded-xl font-black uppercase text-[10px] tracking-wide bg-slate-800 text-slate-200 flex items-center justify-center gap-1.5 hover:bg-slate-700 transition"
             >
-              <Icon icon="mdi:power" className="text-sm" /> Cortar Relay
+              <Icon icon="mdi:power" className="text-sm" /> Cortar Timbre
             </button>
           </footer>
         </div>
@@ -301,10 +301,10 @@ export default function TimbreDarkDashboard() {
           {/* PRIMER GRÁFICO: Línea de tiempo jerárquica */}
           <div>
             <h2 className="text-md font-black tracking-tight mb-1 flex items-center gap-1.5">
-              <Icon icon="mdi:timeline-text-outline" className="text-blue-400 text-xl" /> Flujo Cronológico Diario
+              <Icon icon="mdi:timeline-text-outline" className="text-blue-400 text-xl" /> Cantidad de alarmas del dia.
             </h2>
             <p className="text-[11px] text-slate-500 mb-3">
-              Distribución lineal según relevancia temporal (Entrada &gt; Recreo &gt; Fin Recreo &gt; Salida).
+              Distribución de alarmas siguiendo este orden (Entrada &gt; Recreo &gt; Fin Recreo &gt; Salida).
             </p>
 
             <div className="h-44 w-full bg-slate-950/40 p-2 rounded-xl border border-slate-800/60">
@@ -335,7 +335,7 @@ export default function TimbreDarkDashboard() {
                 </ResponsiveContainer>
               ) : (
                 <div className="h-full flex items-center justify-center text-xs text-slate-600 font-medium">
-                  Aún no hay datos para trazar la línea cronológica.
+                  Aún no hay una alarma para hace el grafico.
                 </div>
               )}
             </div>
@@ -344,7 +344,7 @@ export default function TimbreDarkDashboard() {
           {/* NUEVO SEGUNDO GRÁFICO (EXTRA): Densidad y volumen por categoría */}
           <div className="border-t border-slate-800/60 pt-4">
             <h2 className="text-md font-black tracking-tight mb-1 flex items-center gap-1.5">
-              <Icon icon="mdi:chart-bar" className="text-orange-400 text-xl" /> Volumen de Operaciones por Bloque
+              <Icon icon="mdi:chart-bar" className="text-orange-400 text-xl" /> Cantidad de categorias totales de alarmas (Entrada,Recreo,etc)
             </h2>
             <p className="text-[11px] text-slate-500 mb-3">
               Mapeo cuantitativo de eventos registrados en la memoria intermedia.
@@ -371,7 +371,7 @@ export default function TimbreDarkDashboard() {
                 </ResponsiveContainer>
               ) : (
                 <div className="h-full flex items-center justify-center text-xs text-slate-600 font-medium">
-                  Sin registros cargados para calcular densidad.
+                  Sin registros cargados para calcular la cantidad de alarmas.
                 </div>
               )}
             </div>
